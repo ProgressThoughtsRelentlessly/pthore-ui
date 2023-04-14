@@ -1,0 +1,49 @@
+
+<section id="register-section">
+
+    <div id="register-form-div">
+        <form class="register-form" [formGroup]="registrationDetails" (ngSubmit)="registerUser()" >
+
+            <div class="form-group" >
+                <label for="username">Username : </label>
+                <input formControlName="username" type="text" name="username" />
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input formControlName="email" type="email" name="email" />
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile : </label>
+                <input pattern="^[0-9]{10}$" formControlName="mobile" type="tel" name="mobile" />    
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input formControlName="password" type="password" name="password" />
+            </div>
+
+            <div class="form-group">
+                <label for="rePassword">Re-Enter Password : </label>
+                <input formControlName="rePassword" type="password" name="rePassword" />    
+            </div>
+           <small class="text-danger" [class.d-none]="registrationDetails.valid" > Enter valid Details to signUp!</small>
+            <input [disabled]="registrationDetails.invalid" type="submit" name="submit" value="SignUp" />
+            is invalid: {{registrationDetails.invalid}}
+        </form>
+        
+        <div id="pkce-login-div">
+            <button>
+                <img style="border-radius: 50%" href="http://localhost:8000/loginGoogle"src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+                <a style="background-color: var(--layer-bg-color); color: var(--layer-text-color);" href="http://localhost:8000/loginGoogle">login with google</a>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

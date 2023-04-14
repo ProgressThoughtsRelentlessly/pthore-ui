@@ -1,0 +1,41 @@
+
+
+
+how the components are designed in this project:
+
+    .component-container-N, .secondary-container-N
+        - compoent-container is used to make absolute position and apply component specfic color scheme
+        
+        - secondary-container is used to give appropriate margins to the containers within the 
+         component-container.
+
+        - is used as a parent container to layout as grid-items or flex-items
+        in every major component.
+
+        - each of this containers have nested flex-items and grid-items.
+
+        . This project follows a common color design and pattern over all web-pages.
+
+        . The colours are defined by global variables. with regular and inverse colors.
+
+    . This project doesn't use Bootstrap or any other material design. its purely css.
+     for styling . 
+    
+    . each component like cards, mini-post, search-bar is a custom design. 
+    
+    . This project uses Quill.js library to implement the post-editor. 
+
+
+ngx-quill :
+    npm install ngx-quill
+    
+
+ How to upload file and create file upload component:
+    refer: 
+        https://blog.angular-university.io/angular-file-upload/
+
+
+
+
+
+

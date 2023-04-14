@@ -1,0 +1,51 @@
+<section class="component-container-1">
+    
+    <!-- <div class="secondary-container-1">
+        <div class="search-bar-container">
+            <app-search-bar></app-search-bar>
+        </div> 
+    </div> -->
+
+    <div class="secondary-container-1">
+        <div class="post-container">
+            
+            <div class="post-title-container">
+                <h1 [innerHtml]="{{postDto.postTitle}}" ></h1>
+            </div>
+            <div class="post-banner-container">
+                <button id="upvote">0 - upvote</button>
+            </div>
+ 
+            <div class="post-body-container">
+                <div class="post-body-section" *ngFor="let node of postDto.postNodes; let i = index">
+                    <h3 [innerHtml]="post.getData()[i]" *ngIf="(node.type == 'title')">
+                        <!-- data will be auto added -->
+                    </h3>
+                    <article [innerHtml]="node.textData" *ngIf="(node.type == 'para')">
+                       <!-- data will be added. -->
+                    </article>
+                    <img [style]="compStyles.imgStyle" [src]="node.textData" *ngIf="( node.type == 'img')" />
+                </div>
+            </div>
+
+            <div class="post-comments-container">
+                <app-comments [comment]="postComments" ></app-comments>
+            </div>
+            
+            <div class="recommended-posts-container">
+                
+            </div>
+            <div class="other-posts-container">
+
+            </div>
+
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+
+

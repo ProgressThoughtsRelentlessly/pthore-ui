@@ -1,0 +1,87 @@
+<div class="component-container-1">
+    <div class="secondary-container-1">
+        <div class="profile-update-container">
+            <div class="image-container">
+                <img src="" style="justify-content: center; height: 200px; width: 200px;"/>
+                <label for="changeProfilePicture">Click to Change DP</label>
+                <input hidden id="changeProfilePicture" type="file" name="changeProfilePicture" /> 
+            </div>
+
+            <form class="profile-update-form" [formGroup]="userProfileData" >
+
+                <div class="form-group" >
+                    <label for="firstname">Firstname : </label>
+                    <input formControlName="firstname" type="text" name="firstname" />
+                </div>
+
+                <div class="form-group" >
+                    <label for="lastname">Lastname : </label>
+                    <input formControlName="lastname" type="text" name="lastname" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email : </label>
+                    <input disabled formControlName="email" type="email" name="email" />
+                </div>
+    
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile : </label>
+                    <input pattern="^[0-9]{10}$" formControlName="mobileNumber" type="tel" name="mobileNumber" />    
+                </div>
+                
+                <div class="form-group">
+                    <label for="oldPassword">Old Password : </label>
+                    <input formControlName="oldPassword" type="password" name="oldPassword" />
+                </div>
+                <span>Leave password blank if youre not changing it</span>
+                <div class="form-group">
+                    <label for="newPassword">New Password : </label>
+                    <input formControlName="newPassword" type="password" name="newPassword" />    
+                </div>
+
+                <div class="form-group">
+                    <label> Bio : </label>
+                    <input formControlName="bio" type="textArea" name="bio" />    
+                </div>
+
+               <small class="text-danger" [class.d-none]="userProfileData.valid" > Enter valid Details to updateProfile!</small>
+               <input [disabled]="userProfileData.invalid" type="submit" value="Update Profile" />
+                is invalid: {{userProfileData.invalid}}
+            </form>
+        </div>
+    </div>
+    <!-- This section is to add / remove domains of interest  -->
+    <div class="secondary-container-1">
+        <h3>Select domains from dropDown</h3>
+        <select name="domainSelection" id="domainSelection" >
+                <option>Select a domain</option>
+                <option  value="morning_motivation">Morning Motivation</option>
+                <option value="gym_motivation">Gym Motivation</option>
+                <option value="study_motivation">Study Motivation</option>
+                <option value="thinking_motivation">Thinking Motivation</option>
+                <option value="addiction_warrior_motivation">Brave Addiction Warriors Motivation</option>
+                <option value="career__motivation">Career Motivation</option>
+                <option value="entrepreneur_motivation">Entrepreneur Motivation</option>
+            
+        </select>
+
+        <br>
+        <h3>Interested Domain</h3>
+        <app-general-tiles [data]="domainItems"></app-general-tiles>
+        <br>
+        <h3>Followed</h3>
+        <app-general-tiles [data]="followedItems"></app-general-tiles>
+    </div>
+</div>
+ 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+    <!-- separate reusable component. Can be used in search page as well. -->
+<div class="mini-post">
+    <div class="mini-post-author-img">
+       <p>THis is where the author thumbnail goes</p>
+    </div>
+    <div class="mini-post-banner">
+        <span><a href="">{{ miniPostMessage.author }}</a></span> 
+        <span>{{ miniPostMessage.description }}</span> 
+        <span>{{ miniPostMessage.createdTs }}</span>
+    </div>
+    <div class="mini-post-body">
+        <a>
+            {{ miniPostMessage.body }}
+        </a>
+    </div>
+</div>

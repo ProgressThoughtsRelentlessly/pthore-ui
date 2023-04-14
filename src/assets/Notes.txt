@@ -1,0 +1,21 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+CONTENTS:
+1. NOTES
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+=======================================================================================
+                            NOTES:
+=======================================================================================
+To build a reactive form. you need to first import ReactiveFormsModule in AppModule.ts.
+and Form can be built using FormBuilder and also using individual elements like FormGroup, FormControl.
+
+
+
+
+
+
+
+
+
+
+
+

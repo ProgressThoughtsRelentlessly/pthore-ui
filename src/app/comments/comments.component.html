@@ -1,0 +1,51 @@
+
+<div class="comments-section-wrapper">
+    <div class="comment-input">
+        <input type="text" name="" id="primary-comment" placeholder="Add your comment here">
+        <button>comment</button>
+    </div>
+    <div class="comment-display-container">
+        <div *ngFor="let commentUnit of commentList; let i = index" [style]="customStyles.commentUnitContainer" class="comment-unit-container" >
+            
+            <div class="comment-unit" [style]="customStyles.commentUnitStyle">
+                <label>{{ commentUnit.commentingUserEmail}}</label>
+                <p [style]="customStyles.commentText" >{{ commentUnit.comment }}</p>
+            </div>
+            <div *ngFor="let key of comment.commentReplies.keys(); let i = index" class="comment-unit-replies" [style]="customStyles.commentUnitReplyStyle">
+                <label>{{ key }}</label>
+                <p [style]="customStyles.commentText">{{ commentUnit.commentReplies.get(key) }}</p>
+            </div>
+            <div class="new-reply">
+                <div class="reply-input">
+                    <input type="text" hidden>
+                    <button>reply</button>
+                    <button hidden>cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--  component-design
+
+        [add comments here]----------(comment)              
+------------------------------------------------------
+        [comments display area
+        
+            [Comment 1]
+                |_[reply.1]
+                |_[reply.2]
+                |_[reply.3]
+            [add a reply]---(reply)---(cancel)
+
+            [Comment 2]
+                |_[reply.1]
+                |_[reply.2]
+                |_[reply.3]
+            [add a reply]---(reply)---(cancel)
+        ]
+------------------------------------------------------
+ -->
+

@@ -1,0 +1,33 @@
+<section class="component-container-1">
+    <div class="secondary-container-1">
+        <div class="search-bar-container">
+            <app-search-bar></app-search-bar>
+        </div> 
+    </div>
+     
+
+    <div class="secondary-container-2" >
+        <div class="mini-post-container-grid-item" >
+            <div class="mini-post-container">
+                <div *ngFor="let item of [].constructor(10); let i = index">
+                    <app-mini-post [miniPostMessage]="miniPostMessage"></app-mini-post>
+                </div>
+            </div>
+        </div> 
+        <div class="side-grid-item-container">
+            <h6>The Domains you preferred are:-</h6>
+            <div class="domain-container-grid-item">
+                <div class=""></div>
+                <div class="domain-container">
+                    <div *ngFor="let item of [].constructor(10); let i = index">
+                        <app-domain-tiles [domainMessage]="domainMessage"></app-domain-tiles>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+

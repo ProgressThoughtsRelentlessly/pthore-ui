@@ -1,0 +1,32 @@
+<section class="component-container-1">
+
+    <div class="secondary-container-1">
+        <h2>Most searched and sought after posts....</h2>
+        <div class="cards-container">
+            <div *ngFor="let item of [].constructor(10); let i = index">
+                <app-post-cards></app-post-cards>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- These can be flex boxes -->
+  
+    <div class="secondary-container-1">
+        <h2>Choose from the domain that matters to you !</h2>
+        <div class="domain-container">
+            <div *ngFor="let item of [].constructor(10); let i = index">
+                <app-domain-tiles [domainMessage]="domainMessage"></app-domain-tiles>
+            </div>
+        </div>
+    </div>
+
+    <div class="secondary-container-1" >
+        <div class="mini-post-container" *ngFor="let item of [].constructor(10); let i = index">
+            <app-mini-post [miniPostMessage]="miniPostMessage"></app-mini-post>
+        </div> 
+    </div>
+    
+
+
+</section>

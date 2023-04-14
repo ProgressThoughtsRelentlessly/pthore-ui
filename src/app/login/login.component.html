@@ -1,0 +1,37 @@
+
+<section id="login-section">
+    <div id="login-form-div">
+        <form class="login-form" [formGroup]="lfDetails" (ngSubmit)="loginUser()">
+            <div class="form-group">
+                <label for="username">Username : </label>
+                <input formControlName = "username" type="text" name="myusername"  />
+            </div>
+            
+            <div class="form-group">
+                <label for="password" >Password : </label>
+                <input formControlName="password" type="password" name="mypassword" />
+                <!-- <div><small class="text-danger" [classs.d-none]="username.valid || password.valid || password.untouched | username.untouched">invalid details</small></div> -->
+            </div>
+            <!-- [disabled]="lfDetails.invalid" routerLink="/explore" -->
+            <input  type="submit" name="submit" value="SignIn" />
+        </form>
+        <div id="pkce-login-div">
+            <div class="google-login">
+                <button type="button">
+                    <img style="border-radius: 50%" src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+                    <a style="background-color: var(--layer-bg-color); color: var(--layer-text-color);" href="http://localhost:8000/loginGoogle">login with google</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</section>
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+
+<section class="component-container-1">
+    
+    <div class="secondary-container-1">
+        <div class="public-profile-container"> <!-- grid of single column-->
+            <div class="public-profile-info-container">  <!-- grid of 2 cols 1:6 ratio -->
+                <div class="public-author-details-container">
+                    <img  src="../../assets/logo/hammer-2.png">
+                    <p>Author's Name</p>
+                    <p>Followers count</p>
+                    <p>Social media links</p>
+                    <a href="https://www.facebook.com"  target="_blank">facebook</a>
+                    <a href="https://www.linkedin.com" target="_blank">linkedIn</a>
+                    <button>Follow</button>
+                    <!-- flex-items such as photo, social media links, author bio. -->
+                </div>
+                <div class="public-profile-stats-container">
+                    <table style="border-style: solid; border-color: var(--layer-bg-color); width: 400px; height: 400px;">
+                        <tr>
+                            <td *ngFor="let x of stylesForGraph; let i = index;">
+                                <div [style]="x">{{ x.height.substring(0, x.height.length -2) }}</div> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td *ngFor="let x of stylesForGraph; let i = index;">
+                                {{ i }} 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">Graph for posts count VS month for this year</td>
+                        </tr>
+                    </table>
+                    <!-- flex items of statistical graph.-->
+                </div>
+            </div>
+            <div class="post-creator-container">
+                <div class="post-form-container" >
+                    <form [formGroup]="formDetails" > <!-- (ngSubmit) = "onSubmit($event)-->
+                        <div class="post-title">
+                            <input type="text"  (change)="postDto.postTitle=$event.target.value" placeholder="Enter a Post title" />
+                        </div>
+                        <quill-editor formControlName="editor" [styles]="{height: '200px'}" [modules]="quillConfig" (onFocus)="focus($event)" (onEditorChanged)="changedEditor($event)" (onBlur)="blur($event)" (onEditorCreated)="created($event)"></quill-editor>
+                        <!-- <button (click)="previewPost()">Preview</button> -->
+                        <button (click)="addPostChunkParagraph()">add para</button>
+                        <button>
+                            <label for="image-upload">add image</label>
+                            <input (change)="addPostChunkImage($event)" type="file" id="image-upload" hidden />
+                       </button>
+                       <!-- <button (click)="addPostChunkImage()"></button> -->
+                       <button type="submit" target="_blank" (click)="previewPost()">Preview</button>
+                       <button disabled> Save As Draft </button>
+                       <button type="submit" (click)="onSubmit($event)">Create Post</button>
+                    </form>
+                </div>
+            </div>
+            <div class="post-builder-step-view-container">
+                <div class="post-builder-step-container">
+                    <div *ngFor="let step of postDto.postNodes; index as idx" class="post-builder-step">
+                        <input class="post-builder-step-type" value="{{step.type}}" disabled />
+                        <div class="post-step-rearrage">
+                            <button class="move-up-post-builder-step" 
+                            (click)="moveDown($event, idx)"
+                            [style]="compStyles.postBuilderRearrange"> < </button>
+
+                            <button class="move-down-post-builder-step" 
+                            (click)="moveUp($event, idx)"
+                            [style]="compStyles.postBuilderRearrange"> > </button>
+                            
+                            <button class="remove-post-builder-step" 
+                            (click)="removeStep($event, idx)"
+                            [style]="compStyles.postBuilderRearrange"> X </button>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+<!--
+            <div class="post-preview-container">
+                <div class="post-preview">
+                    <!-- {{ formDetails.get('editor').value }} 
+--><!--
+                    <div *ngFor="let item of postStepData; let i = index;">
+                        <article [innerHtml]="item.data" *ngIf="item.isParagraph">
+                            
+                        </article>
+                        <img [style]="compStyles.imgStyle" [src]="imgSrc[i]" *ngIf="item.isImage" />  
+                    </div>
+                </div>
+            </div>
+-->
+            <div class="recent-posts-container">
+                <div class="mini-post-container">
+                    <div *ngFor="let item of [].constructor(10);">
+                        <app-mini-post></app-mini-post>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</section>
+
+
+
+
+
+
+
+
+

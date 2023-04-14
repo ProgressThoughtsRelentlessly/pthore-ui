@@ -1,0 +1,37 @@
+{
+    "users": [
+        {
+            "id": 4234234,
+            "firstname": "sudarshan",
+            "lastname": "bhat",
+            "email": "sudarshanrbhat.srb2@gmail.com",
+            "mobile": "8296464702",
+            "joinDate": "29-10-2021"           
+        }, 
+        {
+            "id": 53463233,
+            "firstname": "suhas",
+            "lastname": "bhat",
+            "email": "suhas.srb2@gmail.com",
+            "mobile": "8147595946",
+            "joinDate": "29-10-2021"           
+        }, 
+        {
+            "id": 78423434,
+            "firstname": "ramesh",
+            "lastname": "yalgi",
+            "email": "rameshYalgi@gmail.com",
+            "mobile": "82964",
+            "joinDate": "29-10-2021"           
+        }, 
+        {
+            "id": 22254646,
+            "firstname": "seema",
+            "lastname": "arora",
+            "email": "seema.arora_123@gmail.com",
+            "mobile": "8696464711",
+            "joinDate": "29-10-2021"           
+        }
+
+    ]
+}

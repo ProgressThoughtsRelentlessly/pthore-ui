@@ -1,0 +1,47 @@
+
+<section class="component-container-1">
+    
+    <div class="secondary-container-1">
+        <div class="public-profile-container"> <!-- grid of single column-->
+            <div class="public-profile-info-container">  <!-- grid of 2 cols 1:6 ratio -->
+                <div class="public-author-details-container">
+                    <img  src="../../assets/logo/hammer-2.png">
+                    <p>Author's Name</p>
+                    <p>Followers count</p>
+                    <p>Social media links</p>
+                    <a href="https://www.facebook.com"  target="_blank">facebook</a>
+                    <a href="https://www.linkedin.com" target="_blank">linkedIn</a>
+                    <button>Follow</button>
+                    <!-- flex-items such as photo, social media links, author bio. -->
+                </div>
+                <div class="public-profile-stats-container">
+                    <table style="border-style: solid; border-color: var(--layer-bg-color); width: 400px; height: 400px;">
+                        <tr>
+                            <td *ngFor="let x of stylesForGraph; let i = index;">
+                                <div [style]="x">{{ x.height.substring(0, x.height.length -2) }}</div> 
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- flex items of statistical graph.-->
+                </div>
+            </div>
+            <div class="recent-posts-container">
+                <div class="mini-post-container">
+                    <div *ngFor="let item of [].constructor(10);">
+                        <app-mini-post></app-mini-post>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</section>
+
+
+
+
+
+
+
+
+
