@@ -30,19 +30,21 @@ export class PostViewComponent implements OnInit {
 
   constructor(private springService: SpringInteractionService, private route: ActivatedRoute) {
 
+  }
+
+  ngOnInit(): void {
+
     this.postComments.comment = "The horse seems very strong. I think its good for the race.";
     this.postComments.commentReplies = new Map<String, String>();
     this.postComments.commentReplies = this.postComments.commentReplies.set("salsa stark", 'yes I think so too!')
     this.postComments.commentingUserEmail = "sudarshanrbhat.srb2@gmail.com";
     console.log(this.postComments)
-  }
 
-  ngOnInit(): void {
-        this.springService.getPost(this.route.snapshot.queryParams['postId'] ).subscribe(res => {
-          this.postDto = res;
-        }, err => {
-          console.log("unable to retrieve post data : ", err.getStatus(), err.getMessage());
-        });
+    this.springService.getPost(this.route.snapshot.queryParams['postId'] ).subscribe(res => {
+      this.postDto = res;
+    }, err => {
+      console.log("unable to retrieve post data : ", err.getStatus(), err.getMessage());
+    });
   }
 
 }

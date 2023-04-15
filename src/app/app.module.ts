@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PersonalHomePageComponent } from './personal-home-page/personal-home-page.component';
+import { PostViewComponent } from './post-view/post-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { PersonalProfileViewComponent } from './personal-profile-view/personal-profile-view.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
@@ -34,6 +35,7 @@ import { CommentsComponent } from './comments/comments.component';
     HeaderComponent,
     FooterComponent,
     PersonalHomePageComponent,
+    PostViewComponent,
     ProfileViewComponent,
     PersonalProfileViewComponent,
     AdminPageComponent,
