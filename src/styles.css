@@ -7,11 +7,11 @@
 @import '~quill/dist/quill.snow.css';
 
 :root {
-    --global-bg-color: white; /* rgba(245, 231, 231, 0.856);  rgba(245, 231, 231, 0.582); rgb(28, 26, 32); */
+    --global-bg-color: rgba(247, 236, 236, 0.815); /* rgba(245, 231, 231, 0.856);  rgba(245, 231, 231, 0.582); rgb(28, 26, 32); */
     --global-text-color: black; /* rgb(46, 83, 71); */
 
-    --layer-bg-color: rgba(100, 226, 220, 0.794); /* rgb(46, 83, 71); */
-    --layer-text-color: rgb(3, 3, 3); /* rgb(28, 26, 32); */
+    --layer-bg-color: rgb(231, 177, 10); /* rgb(46, 83, 71); */
+    --layer-text-color: rgb(255, 255, 255); /* rgb(28, 26, 32); */
 
     --blue: blue;
 }
